@@ -100,7 +100,7 @@ Candidates are scored across three signals:
 
 ---
 
-## 5. Observability & Recruiter Evaluation Features
+## 5. Observability & Evaluation Features
 
 - **Live Agent Trace Drawer**: Every assistant turn carries a structured `trace` object (route decision, timing bars for Memory Recall / Router / Search / TTFT / Total, recalled memories + RRF scores, `web_search` queries, cache hit status, and tool schema count).
 - **Memory Timeline Sidebar**: Chronological, FTS5-searchable view of every user question grouped by local date with jump-to-session navigation.

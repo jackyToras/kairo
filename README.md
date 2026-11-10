@@ -23,7 +23,7 @@
 - **100% Free-Cost ($0) Options**:
   - Works out-of-the-box with **local Ollama** (`mistral:latest`, `nomic-embed-text`) + **zero-key DuckDuckGo**.
   - Supports **free-tier cloud APIs** (**Groq**, **Google Gemini**, **OpenRouter `:free` models**) via `.env` or the UI **Provider Switcher** modal for sub-second streaming.
-- **Recruiter Observability UI**:
+- **Observability & Memory UI**:
   - **Live Trace & Latency Inspector** drawer (`Memory ms`, `Router ms`, `Search ms`, `TTFT ms`, `Total ms`, recalled memories, and `web_search` cache/provider telemetry).
   - **Memory Timeline** sidebar tab grouping past questions chronologically with live FTS5 search.
 
@@ -107,14 +107,3 @@ Latest verified benchmark results (see [`DESIGN.md`](./DESIGN.md)):
 - **Temporal Memory Eval:** 5 / 5 (100%, p50 `5.47 ms`, p95 `10.54 ms`)
 - **Router & Single-Tool Invariant:** 9 / 9 (100%, p50 `0.02 ms`, `tool_count = 1`)
 - **Live DuckDuckGo Search + Top-3 Page Extraction:** `~2.97 s` uncached, `~9.5 ms` cached
-
----
-
-## 60-Second Video Recording Script
-
-Use this exact timed flow while screen-recording **http://localhost:8000** with the **Trace** drawer visible:
-
-- **0:00 – 0:12 (Hook & Constraint):** *"I built Kairo—a fast, source-grounded chat agent in FastAPI and React with strictly one tool: `web_search`. Notice in the Trace Inspector: `tool_schema_count = 1`—memory and routing live in the orchestrator, not extra tools."*
-- **0:12 – 0:28 (Accuracy & Live Search):** Click **"Live Web Grounding"** (e.g., *"Who created the FastAPI Python framework?"* or *"What is the latest FastAPI release?"*). Point out the live SSE phases (`Searching web` -> `Synthesizing`), inline `[1]` citations, expandable source excerpts, and `search_ms` in the Trace drawer.
-- **0:28 – 0:45 (Speed & Temporal Memory — "What & When"):** Click **New Chat** (proving cross-session memory!), then ask *"What did I ask you earlier today and when?"*. Highlight `route_mode: memory_recall`, `0` web searches executed, `memory_recall_ms`, and the **Memory Timeline** tab on the left showing exact timestamps.
-- **0:45 – 0:60 (Why & Engineering Rigor):** Briefly flash `DESIGN.md` and mention the SQLite WAL + FTS5 + RRF hybrid retrieval, concurrent page extraction with prompt-injection sanitization, 100% free local/cloud LLM support, and the `pytest` + `evals` suite.
