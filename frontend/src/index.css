@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(161, 161, 170, 0.25);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(161, 161, 170, 0.45);
+  }
+}
+
+.prose-kairo p {
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.65;
+}
+
+.prose-kairo p:first-child {
+  margin-top: 0;
+}
+
+.prose-kairo p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-kairo ul,
+.prose-kairo ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.35rem;
+}
+
+.prose-kairo ul {
+  list-style-type: disc;
+}
+
+.prose-kairo ol {
+  list-style-type: decimal;
+}
+
+.prose-kairo li {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.prose-kairo pre {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.5rem;
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  overflow-x: auto;
+  font-size: 0.82rem;
+}
+
+.prose-kairo code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.84em;
+  background-color: rgba(39, 39, 42, 0.75);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.prose-kairo pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.prose-kairo a {
+  color: #34d399;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-kairo strong {
+  color: #fafafa;
+  font-weight: 600;
+}
